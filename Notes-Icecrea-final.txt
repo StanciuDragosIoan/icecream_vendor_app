@@ -177,3 +177,9 @@ app.listen(PORT, () => console.log(`Server Started on Port ..${PORT}`));
 redux setup,
 
 
+
+
+##### building app without REDUX (initially);
+
+-set up components and reac router;
+
