@@ -67,7 +67,9 @@ router.post("/add", [
             //see if icecream item exists
             let icecream = await Icecream.findOne({ flavour });
             if (icecream) {
-                return res.status('400').json({ errors: [{ msg: "Icecream item already exists" }] });
+                return res
+                    .status(400)
+                    .json({ errors: [{ msg: "Icecream item already exists.." }] });
             }
 
             icecream = new Icecream({
@@ -81,7 +83,7 @@ router.post("/add", [
             //save icecream to db
             await icecream.save();
 
-            res.send('Icecream item added to the database')
+            res.send('Icecream item added to the database');
         } catch (err) {
             console.error(err.message);
             res.status(500).send("Icecream server error");

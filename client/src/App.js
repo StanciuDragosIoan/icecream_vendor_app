@@ -6,6 +6,7 @@ import Navbar from "./components/layout/navbar";
 import IcecreamStore from "./components/pages/icecream-store";
 import UpdateIcecream from "./components/pages/update-icecream-stock";
 import AddIcecream from "./components/pages/add-icecream";
+import BuyIcecream from "./components/pages/buy-icecream";
 import DeleteIcecream from "./components/pages/delete-icecream";
 
 
@@ -15,12 +16,13 @@ function App() {
     <Router>
       <Navbar />
       <div className="container">
-
         <br />
         <Route path="/" exact component={IcecreamStore} />
         <Route path="/edit/:id" component={UpdateIcecream} />
         <Route path="/addIcecream" component={AddIcecream} />
         <Route path="/delete/:id" component={DeleteIcecream} />
+        <Route path="/buy/" component={BuyIcecream} />
+
       </div>
     </Router>
 

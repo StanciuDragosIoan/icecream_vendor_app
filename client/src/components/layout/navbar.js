@@ -12,7 +12,7 @@ export default class Navbar extends Component {
                 <h1>
                     <Link className="navbar-brand text-light" to="/">
                         IceCream Vending Machine<i className="fa fa-star-o d-block" />
-                        (づ｡ ◕‿‿◕｡)
+                        (づ｡◕‿‿◕｡)づ
                     </Link>
                 </h1>
                 <button
