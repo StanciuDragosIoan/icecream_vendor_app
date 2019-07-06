@@ -168,7 +168,7 @@ app.listen(PORT, () => console.log(`Server Started on Port ..${PORT}`));
   },
 
 -ran npm run dev from root and it starts both server and client;
--ran npm install axios react-router-dom
+-ran npm install axios react-router-dom bootstrap
 
 
 
