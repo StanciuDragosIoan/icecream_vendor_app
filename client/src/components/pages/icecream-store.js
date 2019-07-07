@@ -9,40 +9,21 @@ const Icecream = props => (
         <td>
             {props.icecream.flavour}
         </td>
-        <td>
+        <td className="text-center">
             {props.icecream.price}
         </td>
         <td>
             {props.icecream.description}
         </td>
-        <td>
+        <td className="text-center">
             {props.icecream.quantity}
         </td>
         <td>
-            {/* <Link to={"/buy/" + props.icecream._id}>Buy Item</Link> | <a href="#" onClick={() => { props.deleteIcecream(props.icecream._id) }}>Delete Item</a> */}
-            <Link to={"/buy/" + props.icecream._id}>Buy Item</Link>
+
+            <Link className="d-block" to={"/buy/" + props.icecream._id}>Buy Item <i className="fa fa-shopping-cart fa-2x text-primary ml-3" aria-hidden="true"></i></Link>
+            <Link to={"/updateStock/" + props.icecream._id}>Update Item <i className="fa fa-pencil  text-secondary ml-3" aria-hidden="true"></i></Link>
         </td>
     </tr>
-
-    // <div className="dg-danger">
-    //     <div className="bg-info" style={{ width: '25vw' }}>
-    //         {props.icecream.flavour}
-    //     </div>
-    //     <div className="bg-warning"  >
-    //         {props.icecream.price}
-    //     </div>
-    //     <div className="bg-info"  >
-    //         {props.icecream.description}
-    //     </div>
-    //     <div className="bg-warning"  >
-    //         {props.icecream.quantity}
-    //     </div>
-
-    //     <div className="col-sm-12">
-    //         <Link to={"/buy/" + props.icecream._id}>Buy Item</Link> | <a href="#" onClick={() => { props.deleteIcecream(props.icecream._id) }}>Delete Item</a>
-    //         <Link to={"/buy/" + props.icecream._id}>Buy Item</Link>
-    //     </div>
-    // </div>
 
 
 
@@ -93,10 +74,10 @@ export default class IcecreamStore extends Component {
                 <table className="table">
                     <thead className="thead-light">
                         <tr>
-                            <th>Flavour</th>
-                            <th>Price</th>
-                            <th>Description</th>
-                            <th>Quantity</th>
+                            <th>Flavour <i className="fa fa-heart-o fa-2x d-block ml-2" aria-hidden="true"></i></th>
+                            <th>Price per piece <i className="fa fa-money fa-2x d-block ml-2" aria-hidden="true"></i></th>
+                            <th>Description <i className="fa fa-comments-o fa-2x d-block ml-2" aria-hidden="true"></i></th>
+                            <th>Quantity available<i className="fa fa-star-o fa-2x d-block ml-2" aria-hidden="true"></i></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -105,24 +86,8 @@ export default class IcecreamStore extends Component {
                 </table>
             </div>
 
-            // <div className="row">
 
-            // <div className="col-sm-3">
-            //     <h3>Flavour:</h3>
-            // </div>
-            // <div className="col-sm-3">
-            //     <h3>Price:</h3>
-            // </div>
-            // <div className="col-sm-3">
-            //     <h3>Description:</h3>
-            // </div>
-            // <div className="col-sm-3">
-            //     <h3>Quantity:</h3>
-            // </div>
-            // <div>
-            //     {this.iceCreamList()}
-            // </div>
-            // </div>
+
         )
     }
 }

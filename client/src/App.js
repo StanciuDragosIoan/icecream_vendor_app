@@ -7,7 +7,8 @@ import IcecreamStore from "./components/pages/icecream-store";
 // import UpdateIcecream from "./components/pages/update-icecream-stock";
 import AddIcecream from "./components/pages/add-icecream";
 import BuyIcecream from "./components/pages/buy-icecream";
-import DeleteIcecream from "./components/pages/delete-icecream";
+import UpdateIcecream from "./components/pages/update-icecream-stock";
+
 
 
 
@@ -18,11 +19,9 @@ function App() {
       <div className="container">
         <br />
         <Route path="/" exact component={IcecreamStore} />
-        {/* <Route path="/edit/:id" component={UpdateIcecream} /> */}
         <Route path="/addIcecream" component={AddIcecream} />
-        <Route path="/delete/:id" component={DeleteIcecream} />
         <Route path="/buy/:id" component={BuyIcecream} />
-
+        <Route path="/updateStock/:id" component={UpdateIcecream} />
       </div>
     </Router>
 

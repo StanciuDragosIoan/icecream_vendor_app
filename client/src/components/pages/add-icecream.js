@@ -77,7 +77,7 @@ export default class AddIcecream extends Component {
                 <h3 className="mt-5 mb-5">Not satisfied by our offer? Add your own flavour to the shop</h3>
 
                 <div className="form-group">
-                    <label className="text-center d-block">Which will it be? (=^ェ^=) </label>
+                    <label className="text-center d-block"><i className="fa fa-heart-o fa-2x mr-2" aria-hidden="true"></i> Which Flavour will it be? (=^ェ^=) </label>
                     <input type="text"
                         required
                         className="form-control"
@@ -85,7 +85,7 @@ export default class AddIcecream extends Component {
                         onChange={this.onChangeFlavour}
                         placeholder="add flavour <333"
                     />
-                    <label className="text-center d-block">How much will it cost? (¬_¬)</label>
+                    <label className="text-center d-block"><i className="fa fa-money fa-2x mr-2" aria-hidden="true"></i> How much will it cost? (¬_¬)</label>
                     <input type="number"
                         required
                         className="form-control"
@@ -93,7 +93,7 @@ export default class AddIcecream extends Component {
                         onChange={this.onChangePrice}
                         placeholder="price"
                     />
-                    <label className="text-center d-block">Is it yummy? (｡◕‿◕｡)</label>
+                    <label className="text-center d-block"><i className="fa fa-comments-o fa-2x  mr-2" aria-hidden="true"></i>Is it yummy? What do the kids say? (｡◕‿◕｡)</label>
                     <input type="text"
                         required
                         className="form-control"

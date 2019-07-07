@@ -34,12 +34,6 @@ export default class Navbar extends Component {
                         <Link to="/addIcecream" className="nav-item nav-link text-light" >
                             Add IceCream Item
                         </Link>
-                        <Link to="/edit/:id" className="nav-item nav-link text-light" >
-                            Edit IceCream Item
-                        </Link>
-                        <Link to="/delete/:id" className="nav-item nav-link text-light" >
-                            Delete IceCream Item
-                        </Link>
                     </div>
                 </div>
             </nav>

@@ -10,6 +10,7 @@ export default class BuyIcecream extends Component {
         this.onChangePrice = this.onChangePrice.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeQuantity = this.onChangeQuantity.bind(this);
+        this.OnUpdateQty = this.OnUpdateQty.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
 
@@ -63,7 +64,20 @@ export default class BuyIcecream extends Component {
     }
 
 
+    OnUpdateQty(e) {
+        let newQty = e.target.value
+        // console.log(typeof this.state.quantity);
+        // console.log(newQty);
+        if (parseInt(newQty) <= 9) {
+            this.setState({
+                quantity: this.state.quantity - parseInt(newQty)
+            });
 
+        } else {
+            // console.log('please buy 0-9');
+        }
+
+    }
 
 
     onSubmit(e) {
@@ -89,7 +103,7 @@ export default class BuyIcecream extends Component {
         console.log('purchase made');
 
 
-        // window.location = "/";
+        window.location = "/";
     }
 
 
@@ -97,10 +111,9 @@ export default class BuyIcecream extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit}>
-                <h3 className="mt-5 mb-5">Make your purchase =)</h3>
-
+                <h3 className="mt-5 mb-5 text-center">Make your purchase =)</h3>
                 <div className="form-group">
-                    <label className="text-center d-block">Item (=^ェ^=) </label>
+                    <label className="text-center d-block"><i className="fa fa-heart-o fa-2x mr-2" aria-hidden="true"></i> Item (=^ェ^=) </label>
                     <input type="text"
                         required
                         className="form-control"
@@ -108,18 +121,30 @@ export default class BuyIcecream extends Component {
                         onChange={this.onChangeFlavour}
                         readOnly="readonly"
                     />
-
-
-                    <label className="text-center d-block">Desired quantity? (⌐■_■)</label>
+                    <label className="text-center d-block">Available quantity (⌐■_■)</label>
                     <input type="number"
                         required
                         className="form-control"
                         value={this.state.quantity}
                         onChange={this.onChangeQuantity}
-                        id="newQty"
+                        // id="newQty"
+                        readOnly="readonly"
                     />
-                </div>
 
+                    <label className="text-center d-block">Desired quantity (⌐■_■)</label>
+                    <input type="number"
+                        required
+                        className="form-control"
+                        id="newQty"
+                        onChange={this.OnUpdateQty}
+                        min="1"
+                        max="9"
+                        inputMode="numeric"
+                        pattern="[0-9]"
+                    />
+                    <small>Please purchase only between 1 and 9 items at once</small>
+                    {/* <button className="btn btn-primary mt-2">Add quantity</button> */}
+                </div>
                 <div className="form-group">
                     <input type="submit" value="Buy Icecream" className="btn btn-primary" />
                 </div>
