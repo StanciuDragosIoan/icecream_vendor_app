@@ -190,6 +190,8 @@ https://www.youtube.com/watch?v=7CqJlxBYj-M&t=1483s
 
 
 --make a 'update-stock component' (use the exact same code as for the store component and add all the other fields);
+*use for that the Edit icecream item component (see in nav the option);;
+
 
 -style the icecream items in the store
 -do a workaround for the set-state in the buy component :-?
