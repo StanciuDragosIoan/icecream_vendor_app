@@ -6,20 +6,21 @@ import axios from "axios";
 //icecream component
 const Icecream = props => (
     <tr>
-        <td className="col-sm-12 col-md-2">
+        <td>
             {props.icecream.flavour}
         </td>
-        <td className="col-sm-12 col-md-2">
+        <td>
             {props.icecream.price}
         </td>
-        <td className="col-sm-12 col-md-2">
+        <td>
             {props.icecream.description}
         </td>
-        <td className="col-sm-12 col-md-2">
+        <td>
             {props.icecream.quantity}
         </td>
-        <td className="col-sm-12 col-md-4">
-            <Link to={"/buy/" + props.icecream._id}>Buy Item</Link> | <a href="#" onClick={() => { props.deleteIcecream(props.icecream._id) }}>Delete Item</a>
+        <td>
+            {/* <Link to={"/buy/" + props.icecream._id}>Buy Item</Link> | <a href="#" onClick={() => { props.deleteIcecream(props.icecream._id) }}>Delete Item</a> */}
+            <Link to={"/buy/" + props.icecream._id}>Buy Item</Link>
         </td>
     </tr>
 
@@ -39,7 +40,7 @@ export default class IcecreamStore extends Component {
 
     //get icecream items from db
     componentDidMount() {
-        axios.get("http://localhost:5000/api/icecream/get/all")
+        axios.get("http://localhost:5000/api/icecream/get/all/")
             .then(res => {
                 this.setState({ icecreamItems: res.data })
             })
@@ -51,7 +52,8 @@ export default class IcecreamStore extends Component {
 
     // deleteIcecream(id) {
     //     axios.delete("http://localhost:5000/api/icecream/delete/" + id)
-    //         .then(res => console.log(res.data))
+    //         .then(res => console.log(res.data));
+
     //     this.setState({
     //         icecreamItems: this.state.icecreamItems.filter(el => el._id !== id)
     //     })
@@ -59,7 +61,7 @@ export default class IcecreamStore extends Component {
 
     iceCreamList() {
         return this.state.icecreamItems.map(currentitem => {
-            return <Icecream icecream={currentitem} deleteIcecream={this.deleteIcecream}
+            return <Icecream icecream={currentitem}
                 key={currentitem._id} />;
         })
     }

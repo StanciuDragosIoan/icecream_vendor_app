@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-export default class extends Component {
+export default class BuyIcecream extends Component {
     constructor(props) {
         super(props);
 
@@ -22,21 +22,23 @@ export default class extends Component {
         }
     }
 
-    componentDidMount() {
-        axios.get('http://localhost:5000/api/icecream/get/all' + this.props.match.params.id)
+    componentDidMount(id) {
+
+        axios.get("http://localhost:5000/api/icecream/get/" + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     flavour: response.data.flavour,
                     price: response.data.price,
                     description: response.data.description,
                     quantity: response.data.quantity
+
                 })
+
+
             })
             .catch(function (error) {
                 console.log(error);
             })
-
-
     }
 
     onChangeFlavour(e) {
@@ -79,6 +81,9 @@ export default class extends Component {
             .catch((error) => {
                 console.log(error);
             })
+
+        console.log('purchase made');
+        // window.location = "/";
     }
 
 
