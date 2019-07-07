@@ -13,6 +13,7 @@ export default class BuyIcecream extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
 
+
         // set initial state
         this.state = {
             flavour: "",
@@ -23,7 +24,6 @@ export default class BuyIcecream extends Component {
     }
 
     componentDidMount(id) {
-
         axios.get("http://localhost:5000/api/icecream/get/" + this.props.match.params.id)
             .then(response => {
                 this.setState({
@@ -31,10 +31,7 @@ export default class BuyIcecream extends Component {
                     price: response.data.price,
                     description: response.data.description,
                     quantity: response.data.quantity
-
                 })
-
-
             })
             .catch(function (error) {
                 console.log(error);
@@ -65,8 +62,14 @@ export default class BuyIcecream extends Component {
         });
     }
 
+
+
+
+
     onSubmit(e) {
         e.preventDefault();
+
+
 
         const icecream = {
             flavour: this.state.flavour,
@@ -76,6 +79,7 @@ export default class BuyIcecream extends Component {
         }
 
 
+
         axios.put("http://localhost:5000/api/icecream/update-icecream/" + this.props.match.params.id, icecream)
             .then(res => console.log(res.data))
             .catch((error) => {
@@ -83,6 +87,8 @@ export default class BuyIcecream extends Component {
             })
 
         console.log('purchase made');
+
+
         // window.location = "/";
     }
 
@@ -100,7 +106,7 @@ export default class BuyIcecream extends Component {
                         className="form-control"
                         value={this.state.flavour}
                         onChange={this.onChangeFlavour}
-
+                        readOnly="readonly"
                     />
 
 
@@ -110,7 +116,7 @@ export default class BuyIcecream extends Component {
                         className="form-control"
                         value={this.state.quantity}
                         onChange={this.onChangeQuantity}
-
+                        id="newQty"
                     />
                 </div>
 

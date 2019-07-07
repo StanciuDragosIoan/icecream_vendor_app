@@ -24,6 +24,26 @@ const Icecream = props => (
         </td>
     </tr>
 
+    // <div className="dg-danger">
+    //     <div className="bg-info" style={{ width: '25vw' }}>
+    //         {props.icecream.flavour}
+    //     </div>
+    //     <div className="bg-warning"  >
+    //         {props.icecream.price}
+    //     </div>
+    //     <div className="bg-info"  >
+    //         {props.icecream.description}
+    //     </div>
+    //     <div className="bg-warning"  >
+    //         {props.icecream.quantity}
+    //     </div>
+
+    //     <div className="col-sm-12">
+    //         <Link to={"/buy/" + props.icecream._id}>Buy Item</Link> | <a href="#" onClick={() => { props.deleteIcecream(props.icecream._id) }}>Delete Item</a>
+    //         <Link to={"/buy/" + props.icecream._id}>Buy Item</Link>
+    //     </div>
+    // </div>
+
 
 
 )
@@ -84,6 +104,25 @@ export default class IcecreamStore extends Component {
                     </tbody>
                 </table>
             </div>
+
+            // <div className="row">
+
+            // <div className="col-sm-3">
+            //     <h3>Flavour:</h3>
+            // </div>
+            // <div className="col-sm-3">
+            //     <h3>Price:</h3>
+            // </div>
+            // <div className="col-sm-3">
+            //     <h3>Description:</h3>
+            // </div>
+            // <div className="col-sm-3">
+            //     <h3>Quantity:</h3>
+            // </div>
+            // <div>
+            //     {this.iceCreamList()}
+            // </div>
+            // </div>
         )
     }
 }
