@@ -22,6 +22,8 @@ function App() {
         <Route path="/addIcecream" component={AddIcecream} />
         <Route path="/buy/:id" component={BuyIcecream} />
         <Route path="/updateStock/:id" component={UpdateIcecream} />
+
+
       </div>
     </Router>
 

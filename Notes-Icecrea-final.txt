@@ -195,3 +195,18 @@ https://www.youtube.com/watch?v=7CqJlxBYj-M&t=1483s
 
 -style the icecream items in the store
 -do a workaround for the set-state in the buy component :-?
+
+
+
+
+
+#added paypal payments
+
+
+- ran #npm install paypal-rest-sdk  in root;	
+
+
+-check paypal demo : https://demo.paypal.com/us/demo/home
+-figure a way to intergrate the checkout screen for the product (checkout.js) paypal developer
+
+https://developer.paypal.com/docs/archive/checkout/integrate/#set-up-your-development-environment

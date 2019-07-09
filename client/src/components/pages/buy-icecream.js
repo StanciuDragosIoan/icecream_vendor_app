@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+
 export default class BuyIcecream extends Component {
     constructor(props) {
         super(props);
@@ -12,6 +13,7 @@ export default class BuyIcecream extends Component {
         this.onChangeQuantity = this.onChangeQuantity.bind(this);
         this.OnUpdateQty = this.OnUpdateQty.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+
 
 
 
@@ -80,6 +82,7 @@ export default class BuyIcecream extends Component {
     }
 
 
+
     onSubmit(e) {
         e.preventDefault();
 
@@ -102,8 +105,13 @@ export default class BuyIcecream extends Component {
 
         console.log('purchase made');
 
+        //paypal payment
+        axios.post('http://localhost:5000/pay').then(resp => {
+            console.log(resp.data);
+        });
 
-        window.location = "/";
+        document.querySelector("#newQty").value = '';
+        //window.location = "/";
     }
 
 
@@ -143,7 +151,7 @@ export default class BuyIcecream extends Component {
                         pattern="[0-9]"
                     />
                     <small>Please purchase only between 1 and 9 items at once</small>
-                    {/* <button className="btn btn-primary mt-2">Add quantity</button> */}
+
                 </div>
                 <div className="form-group">
                     <input type="submit" value="Buy Icecream" className="btn btn-primary" />
