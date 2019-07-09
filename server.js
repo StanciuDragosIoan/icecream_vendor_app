@@ -31,11 +31,13 @@ app.use(cors());
 app.use(express.json({ extended: false }));
 
 //define request
-app.get("/", (req, res) => res.send("API for iceream-shop up and  running  (づ｡◕‿‿◕｡)づ"));
+//app.get("/", (req, res) => res.send("API for iceream-shop up and  running  (づ｡◕‿‿◕｡)づ"));
+
 
 
 //define routes
 app.use("/api/icecream", require("./routes/api/icecream"));
+
 
 
 //paypal payments
@@ -126,9 +128,6 @@ app.get('/cancel', (req, res) => res.send('Cancelled'));
 
 
 
-
-
-
 //Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
     //set static folder
@@ -138,6 +137,8 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
+
+
 
 
 
