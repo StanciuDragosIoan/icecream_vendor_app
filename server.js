@@ -31,7 +31,7 @@ app.use(cors());
 app.use(express.json({ extended: false }));
 
 //define request
-//app.get("/", (req, res) => res.send("API for iceream-shop up and  running  (づ｡◕‿‿◕｡)づ"));
+app.get("/", (req, res) => res.send("API for iceream-shop up and  running  (づ｡◕‿‿◕｡)づ"));
 
 
 
