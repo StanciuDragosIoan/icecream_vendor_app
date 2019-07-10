@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require('cors');
 const connectDB = require("./config/db");
 // PATH for deployment
-const path = require("path");
+//const path = require("path");
 
 
 
@@ -16,7 +16,7 @@ connectDB();
 
 //init middleware
 app.use(cors());
-//var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 
 //enables cors
 // app.use(cors({
@@ -129,14 +129,14 @@ app.get('/cancel', (req, res) => res.send('Cancelled'));
 
 
 //Serve static assets if in production
-if (process.env.NODE_ENV === 'production') {
-    //set static folder
-    app.use(express.static('client/build'));
+// if (process.env.NODE_ENV === 'production') {
+//     //set static folder
+//     app.use(express.static('client/build'));
 
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
-}
+//     app.get("*", (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+//     });
+// }
 
 
 
